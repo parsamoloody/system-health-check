@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Wpedantic
-TARGET = system-metrics
+TARGET = system-health-check
 OBJS = main.o metrics.o
 
 .PHONY: all clean
