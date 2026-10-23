@@ -1,11 +1,15 @@
 A Linux system health checker. It collect system resource metrics and evaluates system health based on resource availability and usage.
 
+#### Requirements
+- gcc compiler
+
+
 #### Build
 ```bash
-gcc main.c metrics.c -o system-health
+make
 ```
 #### Run
 
 ```bash
-./system-health
+./system-health-check
 ```
