@@ -2,7 +2,7 @@ A Linux system health checker. It collect system resource metrics and evaluates 
 
 #### Build
 ```bash
-gcc main.c -o system-health
+gcc main.c metrics.c -o system-health
 ```
 #### Run
 
