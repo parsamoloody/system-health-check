@@ -16,6 +16,16 @@ void format_bytes(unsigned long bytes)
     printf("%.2f %s", size, units[unit]);
 }
 
+void print_separator(const char *label)
+{
+    if (label)
+    {
+        printf("============= %s ============\n", label);
+    }
+    else
+        printf("=========================\n");
+}
+
 unsigned long get_available_ram(void)
 {
     FILE *file = fopen("/proc/meminfo", "r");
@@ -55,6 +65,9 @@ int main(void)
     unsigned long total_ram = info.totalram * info.mem_unit;
     unsigned long used_ram = total_ram - free_ram;
     unsigned long available_ram = get_available_ram();
+    double usage_percent = ((double)used_ram / total_ram) * 100.0;
+
+    print_separator("System metrics");
 
     printf("Uptime: %ld seconds\n", info.uptime);
     printf("Total RAM: ");
@@ -62,10 +75,11 @@ int main(void)
     printf("\n");
     printf("Used RAM: ");
     format_bytes(used_ram);
+    printf(" | %.1f%%",usage_percent);
     printf("\n");
     printf("Available RAM: ");
     format_bytes(available_ram);
     printf("\n");
-
+    print_separator(NULL);
     return 0;
 }
