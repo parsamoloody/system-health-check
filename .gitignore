@@ -2,4 +2,4 @@
 *.o
 *.dSYM/
 main
-system-health
+system-health-check
