@@ -25,10 +25,13 @@ int main(void)
     unsigned long total_ram = info.totalram * info.mem_unit;
     unsigned long used_ram = total_ram - free_ram;
     unsigned long available_ram = get_available_ram();
-    double usage_percent = ((double)used_ram / total_ram) * 100.0;
+    double usage_ram_percent = ((double)used_ram / total_ram) * 100.0;
     // Disp space
     unsigned long long total_disk_space = (unsigned long long)st.f_blocks * st.f_frsize;
     unsigned long long available_disk_space = (unsigned long long)st.f_bavail * st.f_frsize;
+    unsigned long long free_disk_space = (unsigned long long)st.f_bfree * st.f_frsize;
+    unsigned long long used_disk_space = (unsigned long long)total_disk_space - free_disk_space;
+    double used_disk_space_percent = ((double)used_disk_space / total_disk_space) * 100.0;
 
     print_separator("System metrics");
 
@@ -38,13 +41,17 @@ int main(void)
     printf("\n");
     printf("Used RAM: ");
     format_bytes(used_ram);
-    printf(" | %.1f%%", usage_percent);
+    printf(" | %.1f%%", usage_ram_percent);
     printf("\n");
     printf("Available RAM: ");
     format_bytes(available_ram);
     printf("\n");
     printf("Total disk space: ");
     format_bytes(total_disk_space);
+    printf("\n");
+    printf("Used disk space: ");
+    format_bytes(used_disk_space);
+    printf(" | %.1f%%", used_disk_space_percent);
     printf("\n");
     printf("Available disk space: ");
     format_bytes(available_disk_space);
