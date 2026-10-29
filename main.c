@@ -20,15 +20,17 @@ int main(void)
         return 1;
     }
 
+    // Memroy
     unsigned long free_ram = info.freeram * info.mem_unit;
     unsigned long total_ram = info.totalram * info.mem_unit;
     unsigned long used_ram = total_ram - free_ram;
     unsigned long available_ram = get_available_ram();
     double usage_percent = ((double)used_ram / total_ram) * 100.0;
+    // Disp space
+    unsigned long long total_disk_space = (unsigned long long)st.f_blocks * st.f_frsize;
+    unsigned long long available_disk_space = (unsigned long long)st.f_bavail * st.f_frsize;
 
     print_separator("System metrics");
-
-    unsigned long long total = (unsigned long long)st.f_blocks * st.f_frsize;
 
     printf("Uptime: %ld seconds\n", info.uptime);
     printf("Total RAM: ");
@@ -42,7 +44,10 @@ int main(void)
     format_bytes(available_ram);
     printf("\n");
     printf("Total disk space: ");
-    format_bytes(total);
+    format_bytes(total_disk_space);
+    printf("\n");
+    printf("Available disk space: ");
+    format_bytes(available_disk_space);
     printf("\n");
     print_separator(NULL);
     return 0;
