@@ -18,3 +18,4 @@ make run
 ```bash
 make clean && make
 ```
+!["Linux system health check"]("https://github.com/parsamoloody/parsamoloody/blob/main/assets/image.png?raw=true")
