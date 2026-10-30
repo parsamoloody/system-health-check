@@ -11,5 +11,10 @@ make
 #### Run
 
 ```bash
-./system-health-check
+make run
+```
+
+#### Cleanup and rebuild
+```bash
+make clean && make
 ```
