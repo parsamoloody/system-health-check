@@ -22,5 +22,4 @@ make clean && make
 
 - Linux🐧 (Ubuntu, Debian, Arch, Fedora, AlmaLinux, etc.)
 
-
-!["Linux system health check"]("https://github.com/parsamoloody/parsamoloody/blob/main/assets/image.png?raw=true")
+![Linux system health check](https://github.com/parsamoloody/parsamoloody/blob/main/assets/image.png?raw=true)
