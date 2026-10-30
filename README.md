@@ -18,4 +18,9 @@ make run
 ```bash
 make clean && make
 ```
+### Supported Platforms
+
+- Linux🐧 (Ubuntu, Debian, Arch, Fedora, AlmaLinux, etc.)
+
+
 !["Linux system health check"]("https://github.com/parsamoloody/parsamoloody/blob/main/assets/image.png?raw=true")
