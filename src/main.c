@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <sys/sysinfo.h>
-
 #include "metrics/memory.h"
 #include "metrics/disk.h"
 #include "display/display.h"
@@ -23,10 +22,6 @@ int main(void)
 
     if (get_disk_metrics("/", &disk) != 0)
         return 1;
-
-    // print_separator("SYSTEM INFORMATION");
-
-    // printf("  Uptime: %ld seconds\n", info.uptime);
 
     display_system_health(&ram, &disk);
 
