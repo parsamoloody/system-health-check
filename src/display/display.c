@@ -52,7 +52,6 @@ void display_system_health(
     display_resource_metrics("RAM", ram);
     display_resource_metrics("DISK (/)", disk);
 
-    print_separator("SYSTEM HEALTH CHECK");
     printf("\n%sRESOURCES%s\n\n", COLOR_BOLD, COLOR_RESET);
 
     print_usage_bar("RAM", ram->usage_percent);
