@@ -55,7 +55,7 @@ void display_system_health(
 
     printf("\n%sRESOURCES%s\n\n", COLOR_BOLD, COLOR_RESET);
 
-    printf("  CPU Usage: %.1f%%\n", cpu_usage);
+    print_usage_bar("CPU", cpu_usage);
     print_usage_bar("RAM", ram->usage_percent);
     print_usage_bar("DISK", disk->usage_percent);
 
