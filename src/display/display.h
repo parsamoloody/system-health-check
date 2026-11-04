@@ -11,6 +11,7 @@ void display_resource_metrics(
 );
 
 void display_system_health(
+    double cpu_usage,
     const ResourceMetrics *ram,
     const ResourceMetrics *disk
 );

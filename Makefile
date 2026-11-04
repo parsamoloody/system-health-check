@@ -5,6 +5,7 @@ CFLAGS = -Wall -Wextra -std=c11 -I src
 TARGET = system-health-check
 
 SRC = src/main.c \
+	src/metrics/cpu.c \
       src/metrics/memory.c \
       src/metrics/disk.c \
       src/display/display.c \
